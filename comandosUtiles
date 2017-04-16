@@ -1,0 +1,35 @@
+ para mostrar caracteres ocultos como \n usamos echo json_encode($string);
+ $resultado = file_get_contents("../../structures/all/killercandlefrobraseatinghwss.rle");
+echo json_encode($resultado);
+ 
+ ajax, para enviar array de php a js, json_encode($array) y luego en el js iteramos sobre el array haciendo response = JSON.parse(http.response);
+
+ cuando usamos ajax, es importante darse cuenta de q la direccion del php no es la relativa al js sino al index.html aunque el sublime nos parezca indicar lo contrario
+
+ $str = str_replace("\n", '', $str); quitar new lines
+ str_replace(array("\r", "\n"), "", $target); varios targets juntos
+ o tab $needles =array("\r", "\n"); str_replace($needles, "", $target);
+ 
+ git rm --cached [file] para quitar del index pero no del working
+ git rm file lo quita del index y tambien del ordenador
+ git add -u añade al index solo los q ya estaban en el index pero q han sido modificados, por el contrario git add . añade tambien los q no estaban siendo seguidos
+ git
+ para importar un archivo de otra rama
+ git checkout master               # first get back to master
+git checkout experiment -- app.js # then copy the version of app.js 
+                                  # from branch "experiment"
+para ver el ultimo commit : git log 
+para revertir el workbench al ultimo commit  git reset --hard
+
+git borrar rama
+	git push origin --delete <branch_name>
+	git branch -d <branch_name>
+
+ grep -R "DocumentRoot" /etc/apache2/sites-enabled buscar documentroot en la carpeta sites-enabled
+
+ symfony 
+ install composer desde :http://dev.antoinesolutions.com/ubuntu-14.04-trusty/install-and-configure-composer-on-ubuntu-14.04
+ 
+ javascript
+ 	redondear a dos decimales: numero.toFixed(2)
+

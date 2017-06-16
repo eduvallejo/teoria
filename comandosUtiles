@@ -33,3 +33,119 @@ git borrar rama
  javascript
  	redondear a dos decimales: numero.toFixed(2)
 
+
+
+
+
+getent group groupname : muestra en consola los miembros del grupo groupname
+///////////
+groups username : muestra los grupos a los q pertenece un user
+
+///////////
+$url= str_replace("\n", "", $url);
+	str_replace("needle", "replace", "string")
+
+/*  */
+pregmatch('/needle/') devuelve true en "hello needle", se pone el needle entre //
+
+//*  */
+global variable en php, si una variable la declaramos como , por jemplo: global $variable; esa variable es accesible en todo el script
+
+//*  */
+require e include se difrencian en q require Kill the page si no existe el archivo a incluir. en cambio include mostraría el contenido a pesar de q le faltaría información 
+
+//*  */ header('Location: http://etc...')
+header() function cant be used after any content has been output to the page
+, se ha de poner antes del html o sino usar algún tipo de buffer(ob=output buffer)
+
+//* output buffering para poder poner header() despues de un output html*/
+ob_start () para rellenar el buffer y ob_end_clean() para vaciarlo
+
+/* borrrar archivos mendiante la terminal */
+find -size -2k -delete borra los archivos menores de 2kb
+
+08/10/15 en symfony para configurar, entramos desde http://localhost:8000/_configurator/step/0
+
+08/10/15 para comprobar si tenemos instalado PDO, en terminal escribimos php -i|grep PDO
+
+15/10/15 restart apache: sudo service apache2 restart
+
+17/10/15 change permissions permisos sudo chmod -R 777 profiler/*
+
+01/11/15 en doctrine, los decimales tienen  precision(el numero total de digitos (enteros y decimales), scale son el numero de decimales
+
+02/11/15 para cambiar el orden de los fields campos columnas en mysql: ALTER TABLE tableMame MODIFY COLUMN fecha timestamp AFTER variacion;
+
+03/11/15 para resetear el autoincrement en mysql ALTER TABLE sanrander AUTO_INCREMENT = x (por tanto el siguiente valor será x+1)
+
+03/11/15 para evitar el same origin policy (xhr.status=0) en el remote server, hemos de poner rutas relativas. cosa q en local no es necsario. es deicr en local podemos poner la ruta=localhost/xxx/xx pero en remoto no podemos poner http://xxx/xx sino algo parecido a ..//xxx/xx 
+
+06/11/15 date('d-m-Y, H:i') para mostrar la fecha tal que: 06-11-2015, 18:35 
+en twig, dentro de un loop for row in rows, sería: {{ row.fecha |date('d-m-Y, H:i') }}
+
+06/11/15 para poder meter un css en los twig
+	
+    edit app/config/config.yml
+    then go to assetic:
+    under assetic: go to bundles: []
+    and in bundles: [] //type your bundle name
+
+	for instance if your bundle is Acme\DemoBundle, then do the 		following
+
+	assetic:
+   	bundles: [ AcmeDemoBundle ]
+
+09/11/15 para actualizar update el modelo schema , añadir un campo a tabla con symfony: php app/console doctrine:schema:update --force
+
+09/11/15 PARA formatear una cantidad en TWIG: {{ (row.num_acciones * row.precio ) | number_format(2, '.', ',') }} donde el 2 son el numero de decimales y la ',' es la coma para separar los miles
+
+09/11/15 incluir subplantillas en symfony twig{% include ('MCMDemoBundle:Default:nameSubFolder/name.html.twig') %}
+
+10/11/15 para cambiar una variable en mysql dALTER TABLE YourTableNameHere MODIFY COLUMN YourColumnNameHere decimal(4,2)
+
+10/11/15  generar una clase desde cero: php app/console generate:doctrine:entity --entity=AcmeBlogBundle:Post
+
+10/11/15 copiar una tabla mysql a otra nueva: CREATE TABLE tabla_nueva LIKE tabla_original
+
+11/11/15 symfony 
+exit(\Doctrine\Common\Util\Debug::dump($someVar));
+
+16/11/15 para conseguir el ultimo valor de una tabla mysql SELECT fields FROM table ORDER BY id DESC LIMIT 1;
+
+17/11/15 twig length array= array|length
+
+17/11/15 seleccionar valor previo en un array en twig
+{% set previous = false %}
+{% for item in data %}
+    Value : {{ item }}
+
+    {% if previous %}
+        {# use it #}
+    {% endif %}
+
+    {% set previous = item %}
+{% endfor %}
+
+25/11/15 
+05/11/15 mysql para conseguir el precio del ultimo registro: SELECT precio FROM table ORDER BY id DESC LIMIT 1;
+
+25/11/15 XOR operator(^)
+XOR
+A bitwise XOR takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same. For example:
+
+    0101 (decimal 5)
+XOR 0011 (decimal 3)
+  = 0110 (decimal 6)
+
+14/01/16 node.js allows you to write your web application server in javascript
+
+09/07/16 tar -xvzf community_images.tar.gz
+
+para buscar una palabra en algun archivo de un folder se usa en terminal  grep -r "string" folder 
+
+magento bundle, en el admin products bundle design puedo poner q cargue el diseño de un paquete diferente, en este caso pongo el galadelicious. haciendo esto se me cargan las fotos en el menu pero me salen ese codigo php encima de la foto. encuentro q ese codigo está en el radio.phtml y se debe a un comentario en la linea 80(ese codigo queda guardado en el radio.phtml.backup). elimino esa linea en el radio.phtml.
+
+se consigue poner las fotos en el bundle galadelicious con el bundle/options.phtml, ahi está el codigo a modificar
+
+--
+
